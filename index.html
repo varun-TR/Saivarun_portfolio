@@ -148,10 +148,10 @@
               </a>
             </li>
 
-            <!-- NEW NAV TAB FOR PUBLICATIONS -->
-            <li class="publications" data-aos="fade-down" data-aos-delay="600">
-              <a href="#publications" aria-label="publications menu button">
-                &#60;/Publications&#62;
+            <!-- NEW NAV TAB FOR work-experienceS -->
+            <li class="work-experiences" data-aos="fade-down" data-aos-delay="600">
+              <a href="#work-experiences" aria-label="work-experiences menu button">
+                &#60;/work-experiences&#62;
               </a>
             </li>
 
@@ -215,14 +215,14 @@
             </a>
           </li>
 
-          <!-- NEW MOBILE NAV FOR PUBLICATIONS -->
+          <!-- NEW MOBILE NAV FOR work-experienceS -->
           <li
-            id="publications-mobile-tab"
-            class="mobile-navbar-tabs-li publications"
+            id="work-experiences-mobile-tab"
+            class="mobile-navbar-tabs-li work-experiences"
             onclick="hidemenubyli()"
           >
-            <a href="#publications" tabindex="0" aria-label="publications menu button">
-              &#60;/Publications&#62;
+            <a href="#work-experiences" tabindex="0" aria-label="work-experiences menu button">
+              &#60;/work-experiences&#62;
             </a>
           </li>
 
@@ -440,7 +440,7 @@
               </p>
 
               <!-- Resume button -->
-              <button class="resume-btn" id="resume-btn" onclick="openURL()">
+              <button class="resume-btn" id="resume-btn" onclick="openResume()">
                 <div class="sign">
                   <svg viewBox="0 0 640 512">
                     <path
@@ -450,17 +450,14 @@
                 </div>
                 <div class="text">Resume</div>
               </button>
-            </div>
 
-            <div class="dp" data-aos="fade-up">
-              <img
-                src="src/png/img_prof.jpg"
-                alt="Saivarun Tanjore Raghavendra Chordiya"
-                tabindex="0"
-                aria-label="image of Saivarun Tanjore Raghavendra"
-              />
+              <script>
+                function openResume() {
+                  window.open('src/pdf/saivarun_resume.pdf', '_blank');
+                }
+              </script>
+
             </div>
-          </div>
         </div>
       </section>
       <!-- about section ends  -->
@@ -662,24 +659,24 @@
       </section>
       <!-- skills section ends -->
 
-      <!-- PUBLICATIONS SECTION (SAME STYLE AS PROJECTS) -->
-      <section class="projects-section-container" id="publications">
+      <!-- work-experienceS SECTION (SAME STYLE AS PROJECTS) -->
+      <section class="projects-section-container" id="work-experiences">
         <div class="projects-section-div">
           <div class="section-heading" data-aos="fade-up">
             <h2
               class="section-heading-article"
               tabindex="0"
-              aria-label="My publications starts from here"
+              aria-label="My work-experiences starts from here"
             >
-              &#60;/Publications&#62;
+              &#60;/work-experiences&#62;
             </h2>
             <p class="sectionHeadingP"></p>
           </div>
           <div class="project-boxes-div">
-            <!-- SAMPLE PUBLICATION 1 -->
+            <!-- SAMPLE work-experience 1 -->
           <div class="project-box-wrapper" data-aos="fade-up">
             <!-- Enforce block layout instead of flex: -->
-            <div class="project-box project-box4" id="publication-box1" style="display: block;">
+            <div class="project-box project-box4" id="work-experience-box1" style="display: block;">
               <!-- Force the info-div to take full width: -->
               <div class="info-div" style="width: 100%; margin-right: 0;">
                 <article class="ProjectHeading">
@@ -696,9 +693,9 @@
                     href="https://link.springer.com/article/10.3103/S1060992X24700851"
                     target="_blank"
                     class="cta"
-                    aria-label="View Publication PDF"
+                    aria-label="View work-experience PDF"
                   >
-                    <span>View Publication</span>
+                    <span>View work-experience</span>
                     <svg viewBox="0 0 13 10" height="10px" width="15px">
                       <path d="M1,5 L11,5"></path>
                       <polyline points="8 1 12 5 8 9"></polyline>
@@ -708,44 +705,6 @@
               </div>
             </div>
           </div>
-
-
-            <!-- SAMPLE PUBLICATION 2 -->
-            <!-- <div class="project-box-wrapper" data-aos="fade-up">
-              <div class="project-box project-box4" id="publication-box2">
-                <div class="info-div">
-                  <article class="ProjectHeading">
-                    Publication Title 2
-                  </article>
-                  <p class="ProjectDescription">
-                    Brief description or abstract snippet for Publication #2.
-                  </p>
-                  <p class="ProjectDescription">
-                    (Keywords, journal name, year, etc.)
-                  </p>
-                  <div class="project-buttons">
-                    <a
-                      href="https://example.com/publication2.pdf"
-                      target="_blank"
-                      class="cta"
-                      aria-label="View Publication PDF"
-                    >
-                      <span>View Publication</span>
-                      <svg viewBox="0 0 13 10" height="10px" width="15px">
-                        <path d="M1,5 L11,5"></path>
-                        <polyline points="8 1 12 5 8 9"></polyline>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="image-div">
-                  <img
-                    src="src/png/placeholder_pub2.png"
-                    alt="Publication 2 Preview Image"
-                  />
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
