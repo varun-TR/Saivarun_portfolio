@@ -941,119 +941,150 @@
         </div>
       </section>
       <style>
-        .testimonials-container {
-            display: flex; /* Added for vertical centering */
-            align-items: center; /* Vertically centers content */
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-        }
+          .testimonials-container {
+              display: flex; /* Added for vertical centering */
+              align-items: center; /* Vertically centers content */
+              background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          }
 
-        .content-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+          .content-wrapper {
+              max-width: 1400px;
+              margin: 0 auto;
+          }
 
-        .title-section {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+          .title-section {
+              text-align: center;
+              margin-bottom: 50px;
+          }
 
-        .main-title {
-            font-size: 2.8em;
-            color: #e0e0e0;
-            font-family: 'Arial', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+          .main-title {
+              font-size: 2.8em;
+              color: #e0e0e0;
+              font-family: 'Arial', sans-serif;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+          }
 
-        /* Horizontal layout */
-        .testimonials-track {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 30px;
-            padding-bottom: 20px;
-            justify-content: center; /* Centers cards horizontally */
-        }
+          /* Horizontal layout */
+          .testimonials-track {
+              display: flex;
+              flex-wrap: nowrap;
+              overflow-x: auto;
+              gap: 30px;
+              padding-bottom: 20px;
+              justify-content: center; /* Centers cards horizontally */
+          }
 
-        .testimonial-card {
-            flex: 0 0 350px;
-            background: #1a1a2e;
-            border-radius: 12px;
-            padding: 25px;
-            min-width: 350px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+          .testimonial-card {
+              flex: 0 0 350px;
+              background: #1a1a2e;
+              border-radius: 12px;
+              padding: 25px;
+              min-width: 350px;
+              max-width: 350px; /* Ensure fixed width */
+              min-height: 250px; /* Fixed minimum height */
+              max-height: 250px; /* Ensures uniform height */
+              display: flex;
+              flex-direction: column;
+              overflow: hidden; /* Prevents text overflow */
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
+          .testimonial-card:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+          }
 
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+          .card-content {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+              overflow: hidden;
+          }
 
-        .author-name {
-            font-size: 1.8em;
-            color: #f0eaea;
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-family: 'Georgia', serif;
-        }
+          .author-name {
+              font-size: 1.4em;
+              color: #f0eaea;
+              font-weight: bold;
+              margin-bottom: 10px;
+              font-family: 'Georgia', serif;
+          }
 
-        .review-text {
-            color: #f0eaea;
-            font-size: 1.5em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-family: 'Arial', sans-serif;
-        }
+          /* Ensures text fits inside the fixed box with scroll */
+          .review-text {
+              color: #f0eaea;
+              font-size: 1.1em;
+              line-height: 1.6;
+              max-height: 140px; /* Restricts text height */
+              overflow-y: auto; /* Enables vertical scrolling */
+              padding-right: 10px; /* Prevents content from sticking to scrollbar */
+              font-family: 'Arial', sans-serif;
+          }
 
-        .link-container {
-            margin-top: auto;
-        }
+          /* Custom scrollbar for review text */
+          .review-text::-webkit-scrollbar {
+              width: 5px;
+          }
 
-        .profile-link {
-            text-decoration: none;
-            display: inline-block;
-        }
+          .review-text::-webkit-scrollbar-track {
+              background: #e0e0e0;
+              border-radius: 5px;
+          }
 
-        .profile-link span {
-            background: #e94560;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 1.1em;
-            font-weight: 500;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
+          .review-text::-webkit-scrollbar-thumb {
+              background: #e94560;
+              border-radius: 5px;
+          }
 
-        .profile-link span:hover {
-            background: #d32f4b;
-            transform: scale(1.05);
-        }
+          .review-text::-webkit-scrollbar-thumb:hover {
+              background: #d32f4b;
+          }
 
-        /* Custom scrollbar */
-        .testimonials-track::-webkit-scrollbar {
-            height: 10px;
-        }
+          .link-container {
+              margin-top: auto;
+          }
 
-        .testimonials-track::-webkit-scrollbar-track {
-            background: #e0e0e0;
-            border-radius: 5px;
-        }
+          .profile-link {
+              text-decoration: none;
+              display: inline-block;
+          }
 
-        .testimonials-track::-webkit-scrollbar-thumb {
-            background: #e94560;
-            border-radius: 5px;
-        }
+          .profile-link span {
+              background: #e94560;
+              color: #fff;
+              padding: 0px 20px;
+              border-radius: 25px;
+              font-size: 1.1em;
+              font-weight: 500;
+              transition: background 0.3s ease, transform 0.3s ease;
+          }
 
-        .testimonials-track::-webkit-scrollbar-thumb:hover {
-            background: #d32f4b;
-        }
+          .profile-link span:hover {
+              background: #d32f4b;
+              transform: scale(1.05);
+          }
+
+          /* Custom scrollbar for horizontal track */
+          .testimonials-track::-webkit-scrollbar {
+              height: 10px;
+          }
+
+          .testimonials-track::-webkit-scrollbar-track {
+              background: #e0e0e0;
+              border-radius: 10px;
+          }
+
+          .testimonials-track::-webkit-scrollbar-thumb {
+              background: #e94560;
+              border-radius: 5px;
+          }
+
+          .testimonials-track::-webkit-scrollbar-thumb:hover {
+              background: #d32f4b;
+          }
+
+  
       </style>
       <section class="testimonials-container" id="testimonials"></section>
         <div class="content-wrapper">
@@ -1063,7 +1094,7 @@
               tabindex="0"
               aria-label="Testimonials section begins here"
             >
-              Testimonials
+              recommendations
             </h2>
           </div>
           <div class="testimonials-track">
@@ -1071,14 +1102,25 @@
             <div class="testimonial-card">
                 <div class="card-content">
                   <article class="author-name">
-                    Ravi
+                    ​Mindi Maline, MA (she/her/hers) 
                   </article>
                   <p class="review-text">
-                    I had the pleasure of studying with Varun at Malla Reddy Institute of Engineering And Technology during our Computer Science degrees. Working together on group projects, I was consistently impressed by Varun's technical prowess and quick grasp of complex concepts. As a skilled software engineer, he excels in Python, Java, C, C++, and Full Stack development, producing clean, efficient, and scalable code. His systematic problem-solving and collaborative nature shone through in our projects. Varun's passion for learning and staying current with industry trends makes him an invaluable asset to any team. I wholeheartedly recommend him.
+                    I am pleased to recommend Saivarun Tanjore Raghavendra. I got to know Saivarun in my capacity as an English Language Specialist at INTO Mason at George Mason University. I worked with him for several weeks, and can confidently attest to his exceptional skills and attributes that make him an outstanding candidate,
+
+                    Over the weeks that I worked with Saivarun, I was impressed by his commitment to learning, his willingness to take on new challenges, and his reliability in completing his tasks on time. He also has excellent communication skills. Saivarun demonstrated the capacity to learn independently which greatly improved his language skills.
+
+                    In my capacity as Saivarun’s tutor, he worked to improve his English language skills in both grammar and pronunciation. This was done through independent study, conversation, and presentations of material in his field. This required frequent speaking practice. Saivarun was able to convey complex technical concepts in a way that was understandable to both technical and non-technical stakeholders. His ability to communicate in this manner would significantly enhance collaboration by ensuring that everyone is on the same page and that tasks are executed smoothly. Saivarun’s approach not only strengthens teamwork but also inspires confidence among colleagues, which is crucial in high-pressure environments.
+
+                    In addition to his communicative prowess,  Saivarun consistently demonstrated a strong commitment to meeting deadlines. Throughout our work together, he has repeatedly proven to be reliable in submitting work on time. While working with me, he consistently completed tasks in a timely manner even under challenging circumstances. This reliability is critical in software engineering, where project timelines can dictate overall success. Saivarun’s ability to manage his time effectively and prioritize tasks ensures that he is a dependable team member.
+
+                    Saivarun also embraced learning opportunities and sought out ways to expand his skill set, which is crucial in the ever-evolving field of technology. He possesses a positive attitude toward personal and professional growth demonstrated by his performance on tasks and assignments. Saivarun showed his commitment to improving his language skills through his significant improvement in all language skills. He was able to take on the challenge of working independently on a variety of tasks to improve his language skills while also completing his own coursework and working as a graduate teaching assistant
+
+                    In conclusion, I highly recommend Saivarun Tanjore Raghavendra. He is a remarkable candidate for any software engineering and data-related position. His communication skills, commitment to deadlines, reliability, and enthusiasm for new challenges will undoubtedly make him an invaluable addition to your team. I wholeheartedly support his application and expect great achievements from him in his future endeavors. Please feel free to contact me if you have any further questions.
+
                   </p>
                   <div class="link-container">
                     <a
-                      href="https://www.linkedin.com/in/ravi-raushan-singh/"
+                      href="https://www.linkedin.com/in/mindi-maline-m-ed-78912911/"
                       target="_blank"
                       class="profile-link"
                     >
@@ -1087,6 +1129,25 @@
                   </div>
                 </div>
             </div>
+            <div class="testimonial-card">
+              <div class="card-content">
+                <article class="author-name">
+                  Ravi
+                </article>
+                <p class="review-text">
+                  I had the pleasure of studying with Varun at Malla Reddy Institute of Engineering And Technology during our Computer Science degrees. Working together on group projects, I was consistently impressed by Varun's technical prowess and quick grasp of complex concepts. As a skilled software engineer, he excels in Python, Java, C, C++, and Full Stack development, producing clean, efficient, and scalable code. His systematic problem-solving and collaborative nature shone through in our projects. Varun's passion for learning and staying current with industry trends makes him an invaluable asset to any team. I wholeheartedly recommend him.
+                </p>
+                <div class="link-container">
+                  <a
+                    href="https://www.linkedin.com/in/ravi-raushan-singh/"
+                    target="_blank"
+                    class="profile-link"
+                  >
+                    <span>View Profile</span>
+                  </a>
+                </div>
+              </div>
+          </div>
             <!-- Add more testimonials here with the same structure -->
           </div>
         </div>
